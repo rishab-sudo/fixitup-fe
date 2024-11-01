@@ -1,0 +1,118 @@
+.product_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  .product_text_wrapper{
+    padding: 5% 0px;
+    padding-left: 5%;
+  }
+  .product_heading{
+ color: #FF688B;
+font-family: "Rubik Wet Paint";
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+  }
+  .regular_price{
+color: rgba(0, 0, 0, 0.30);
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
+  }
+  .product_price {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 50px;
+  }
+  .counter_container{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .counter_button {
+  width: 35px;
+  height: 35px;
+    text-align: center !important;
+  border-radius: 100%;
+   font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border: .5px solid lightgray;
+    color: black;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+  }
+  .addtocart_button{
+    margin-top: 3.5rem;
+width: 380px;
+height: 54px;
+flex-shrink: 0;
+border-radius: 45px;
+border: 1px solid #FF688B;
+background: rgba(217, 217, 217, 0.30);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+  .kit_image_div {
+  width: 42% !important;
+margin-left: auto;
+  }
+  .kit_image {
+    width: 100%;
+    margin-left: auto;
+  }
+  .allProduct_Img{
+    width: 100%;
+  }
+  .fly2_image{
+    position: absolute;
+    width: 20%;
+   top: 40%;
+   right: 0;
+  }
+  @media (max-width: 767px) {
+    .product_text_wrapper{
+ width: 100%;
+    }
+    .product_heading{
+ font-size: 24px;
+ }
+ .regular_price{
+  font-size: 20px;
+  margin-top: 15px;
+ }
+ .product_price {
+font-size: 18px;
+margin-top: 15px;
+}
+.counter_button {
+  width: 25px;
+  height: 25px;
+   font-size: 18px;
+   text-align: center !important;
+ }
+ .addtocart_button{
+  font-size: 18px;
+  padding: 2px 15px;
+  margin-top: 2rem;
+width: auto;
+height: auto;
+border-radius: 30px;
+}
+.kit_image_div{
+  width: 50%;
+}
+ .fly2_image {
+   position: absolute;
+   width: 20%;
+   top: 58%;
+   right: 0;
+ }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {}

@@ -1,0 +1,59 @@
+.quote_fluid{
+   padding: 5% 5%;
+  margin-top: 5px !important;
+}
+.quote_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.benefits_text_wrapper{
+    width: 45%;
+    margin-left: auto;
+}
+.benefits_heading{
+    color: #FF688B;
+font-family: Poppins;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+}
+.points_flex_div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+.fly2_form{
+    position: absolute;
+    bottom: 20%;
+    left: -6%;
+    width: 20%;
+}
+/*  */
+@media (max-width: 767px) {
+    .quote_container{
+ flex-direction: column;
+ justify-content: center;
+ gap: 2rem;
+    }
+    .benefits_text_wrapper{
+        width: 100%;
+       margin: auto;
+    }
+    .benefits_heading{
+    font-size: 24px;
+  }
+  .fly2_form {
+      position: absolute;
+      bottom: 5%;
+      left: -6%;
+  }
+    .quote_fluid{
+        padding: 5% 5%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {}

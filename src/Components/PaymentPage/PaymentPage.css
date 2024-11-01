@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.payment-page {
+    width: 90%; /* Increased to utilize more space on smaller screens */
+    max-width: 1200px; /* Limit maximum width for larger screens */
+    margin: 50px auto;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures separation line does not overflow */
+}
+
+.user-details {
+    flex: 1 1 60%; /* Flex-grow, shrink, and base width */
+    padding: 20px;
+    border-right: 2px solid #dee2e6; /* Right border for separation */
+}
+
+.order-summary {
+    flex: 1 1 40%; /* Flex-grow, shrink, and base width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between items */
+}
+
+.separator {
+    width: 2px;
+    background-color: #dee2e6;
+}
+
+.form-control {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px; /* Space for floating label */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding does not increase width */
+    transition: border-color 0.3s;
+    font-size: 14px; /* Smaller font size */
+}
+
+.summary-details {
+    margin-bottom: 20px;
+}
+
+.summary-details p {
+    margin: 8px 0; /* Space between each line item */
+    font-size: 16px; /* Adjust font size */
+    color: #555; /* Lighter color for text */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #dee2e6; /* Light gray color for the separator line */
+    margin: 15px 0; /* Space above and below the line */
+}
+
+.coupon-input {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px;
+    /* Allow items to wrap on small screens */
+}
+
+.coupon-input .MuiTextField-root {
+    flex: 1; /* Allow TextField to take available width */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.coupon-input button {
+    padding: 10px 15px; /* Adjust padding for a more compact button */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100px; /* Set a minimum width for the button */
+}
+
+.coupon-input button:hover {
+    background-color: #0056b3;
+}
+
+.proceed-button {
+    margin-top: 10px; /* Space above the button */
+}
+
+.proceed-button button {
+    width: 100%;
+    padding: 10px; /* Consistent padding */
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.proceed-button button:hover {
+    background-color: #218838;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1024px) {
+    .payment-page {
+        width: 95%; /* Utilize more width for larger mobile/tablet screens */
+    }
+
+    .checkout-container {
+        flex-direction: column; /* Stack on smaller screens */
+        padding: 20px; /* Add padding to ensure content doesn't touch the edges */
+    }
+
+    
+
+    .order-summary {
+        border-top: 2px solid #dee2e6; /* Separate the order summary in column layout */
+    }
+    .coupon-input {
+        flex-direction: column; /* Stack coupon input elements */
+        align-items: stretch; /* Stretch elements to full width */
+        margin-bottom: 20px; /* Space below coupon input section */
+    }
+
+    .coupon-input .MuiTextField-root {
+        margin-right: 0; /* Remove right margin for the input on smaller screens */
+        margin-bottom: 10px; /* Space below input */
+        width: 100%; /* Ensure input field takes full width */
+    }
+
+    .coupon-input button {
+        width: 100%; /* Make coupon button full width */
+        margin-top: 10px; /* Space above the button */
+    }
+
+    .form-control {
+        width: 100%; /* Ensure all form controls take full width */
+        margin-bottom: 15px; /* Space below form controls */
+    }
+
+    .form-control input {
+        width: 100%; /* Ensure input fields take full width */
+        padding: 12px; /* Adjust padding for better usability */
+        font-size: 16px; /* Increase font size for readability */
+    }
+
+    .summary-details p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .proceed-button {
+        margin-top: 10px; /* Space above the button */
+        width: 100%; /* Ensure the proceed button is full width */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .coupon-input {
+        flex-direction: column; /* Stack coupon input elements */
+        align-items: stretch; /* Stretch elements to full width */
+        margin-bottom: 20px; /* Space below coupon input section */
+    }
+
+    .coupon-input .MuiTextField-root {
+        margin-right: 0; /* Remove right margin for the input on smaller screens */
+        margin-bottom: 10px; /* Space below input */
+        width: 100%; /* Ensure input field takes full width */
+    }
+
+    .coupon-input button {
+        width: 100%; /* Make coupon button full width */
+        margin-top: 10px; /* Space above the button */
+    }
+
+    .form-control {
+        width: 100%; /* Ensure all form controls take full width */
+        margin-bottom: 15px; /* Space below form controls */
+    }
+
+    .form-control input {
+        width: 100%; /* Ensure input fields take full width */
+        padding: 12px; /* Adjust padding for better usability */
+        font-size: 16px; /* Increase font size for readability */
+    }
+
+    .summary-details p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .proceed-button {
+        margin-top: 10px; /* Space above the button */
+        width: 100%; /* Ensure the proceed button is full width */
+    }
+}
+
+
+/* Order Summary Specific Styles */
+.order-summary {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for contrast */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.order-summary h3 {
+    font-size: 24px;
+    color: #333; /* Darker color for headings */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.summary-details {
+    margin-bottom: 20px; /* Space below summary details */
+}

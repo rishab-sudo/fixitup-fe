@@ -1,0 +1,35 @@
+/*  */
+.page_heading {
+  font-size: 40px;
+    color: #FF688B;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .page_text {
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 500;
+  }
+  /*  */
+/*  */
+@media (max-width: 767px) {
+  .banner_fluid{
+    height: 45vh;
+    width: 100%;
+  }
+  .fly{
+    width: 150px;
+  }
+  .page_heading {
+    font-size: 22px;
+    color: #FF688B;
+    
+  }
+  .page_text {
+    font-size: 14px;
+    font-weight: 500;
+  font-family: 'Poppins';
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {}
