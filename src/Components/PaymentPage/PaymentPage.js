@@ -66,7 +66,7 @@ const PaymentPage = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/orders/send-order-confirmation", {
+      await axios.post("https://fixitup-6f381f0c1b86.herokuapp.com/api/orders/send-order-confirmation", {
         buyerEmail,
         sellerEmail,
         orderDetails,
