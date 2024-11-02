@@ -14,7 +14,7 @@ font-size: 40px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-text-transform: uppercase;
+text-transform: capitalize;
   }
   .regular_price{
 color: rgba(0, 0, 0, 0.30);

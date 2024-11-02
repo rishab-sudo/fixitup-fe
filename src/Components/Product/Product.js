@@ -6,6 +6,7 @@ import "./Product.css";
 import kitImg from "../../assets/kit.png";
 import kit2Img from "../../assets/kit22.jpg";
 import allKitImg from "../../assets/allProducts.png";
+import allKitImg2 from "../../assets/allProducts2.png";
 
 // Product Data
 const products = [
@@ -21,7 +22,7 @@ const products = [
     name: "Ladies Special Kit",
     price: 99,
     image: kit2Img,
-     bannerimg: allKitImg,
+     bannerimg: '',
 
   },
 ];
@@ -113,7 +114,7 @@ const Product = () => {
           <img
             // src="Images/allProducts.png"
              src={product.bannerimg}
-            alt="allProducts"
+            alt=""
             className="allProduct_Img "
             style={{ width: "100%" }}
           />
