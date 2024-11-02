@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../../Redux/CartSlice";
 import axios from "axios";
-import { TextField, Button, Typography, Divider } from "@mui/material";
+import Swal from "sweetalert2";
+import { TextField, Button, Typography, Divider, CircularProgress } from "@mui/material";
 import "./PaymentPage.css";
 
 const PaymentPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
 
   const [email, setEmail] = useState("");
@@ -19,7 +22,6 @@ const PaymentPage = () => {
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
 
-  // Calculate Total Price
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.count,
     0
@@ -31,7 +33,6 @@ const PaymentPage = () => {
     setEmailError(!/\S+@\S+\.\S+/.test(emailValue));
   };
 
-  // Disable proceed button if any required field is empty or email is invalid
   const isFormIncomplete = !(
     name &&
     email &&
@@ -72,18 +73,44 @@ const PaymentPage = () => {
         orderDetails,
         totalPrice,
         addressDetails,
+      }); 
+      
+      dispatch(clearCart());
+      Swal.fire({
+        title: "Order Submitted!",
+        text: "Your order has been placed successfully.",
+        icon: "success",
+        confirmButtonText: "OK",
+        timer: 3000,
+        position: "center",
+      }).then(() => {
+        navigate("/payment-process");
       });
-      navigate("/payment-process");
     } catch (error) {
       console.error("Error sending emails:", error);
-      alert("Failed to send confirmation emails");
+      Swal.fire({
+        title: "Submission Failed",
+        text: "Failed to send confirmation emails",
+        icon: "error",
+        confirmButtonText: "Try Again",
+        position: "center",
+      });
     } finally {
       setLoading(false);
     }
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }}>
+        <CircularProgress style={{ color: '#b33b72', width: '50px', height: '50px' }} />
+      </div>
+    )
   }
 
   return (
