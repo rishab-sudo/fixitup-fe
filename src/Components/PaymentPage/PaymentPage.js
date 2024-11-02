@@ -12,12 +12,12 @@ const PaymentPage = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState(""); // Name state
-  const [phone, setPhone] = useState(""); // Phone state
-  const [address, setAddress] = useState(""); // Address state
-  const [city, setCity] = useState(""); // City state
-  const [state, setState] = useState(""); // State state
-  const [zipCode, setZipCode] = useState(""); // Zip Code state
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
 
   // Calculate Total Price
   const totalPrice = cartItems.reduce(
@@ -31,9 +31,21 @@ const PaymentPage = () => {
     setEmailError(!/\S+@\S+\.\S+/.test(emailValue));
   };
 
+  // Disable proceed button if any required field is empty or email is invalid
+  const isFormIncomplete = !(
+    name &&
+    email &&
+    !emailError &&
+    phone &&
+    address &&
+    city &&
+    state &&
+    zipCode
+  );
+
   const handleProceedToPay = async () => {
     const buyerEmail = email;
-    const sellerEmail = "shivamdeveloper23@gmail.com";
+    const sellerEmail = "contactfixitupinfo@gmail.com";
 
     const orderDetails = cartItems.map((item) => ({
       name: item.name,
@@ -41,7 +53,6 @@ const PaymentPage = () => {
       count: item.count,
     }));
 
-    // Collect address details
     const addressDetails = {
       name,
       email: buyerEmail,
@@ -60,9 +71,9 @@ const PaymentPage = () => {
         sellerEmail,
         orderDetails,
         totalPrice,
-        addressDetails, // Include address details in the request
+        addressDetails,
       });
-      navigate("/payment-process"); // Navigate to the next page
+      navigate("/payment-process");
     } catch (error) {
       console.error("Error sending emails:", error);
       alert("Failed to send confirmation emails");
@@ -90,6 +101,7 @@ const PaymentPage = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             sx={textFieldStyle}
+            required
           />
           <TextField
             fullWidth
@@ -100,6 +112,7 @@ const PaymentPage = () => {
             error={emailError}
             helperText={emailError ? "Please enter a valid email address" : ""}
             sx={textFieldStyle}
+            required
           />
           <TextField
             fullWidth
@@ -108,6 +121,7 @@ const PaymentPage = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             sx={textFieldStyle}
+            required
           />
 
           <Typography variant="h5" className="section-heading">
@@ -120,6 +134,7 @@ const PaymentPage = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             sx={textFieldStyle}
+            required
           />
           <TextField
             fullWidth
@@ -128,6 +143,7 @@ const PaymentPage = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             sx={textFieldStyle}
+            required
           />
           <TextField
             fullWidth
@@ -136,6 +152,7 @@ const PaymentPage = () => {
             value={state}
             onChange={(e) => setState(e.target.value)}
             sx={textFieldStyle}
+            required
           />
           <TextField
             fullWidth
@@ -144,12 +161,15 @@ const PaymentPage = () => {
             value={zipCode}
             onChange={(e) => setZipCode(e.target.value)}
             sx={textFieldStyle}
+            required
           />
         </div>
 
         {/* Order Summary */}
         <div className="order-summary">
-          <Typography variant="h5" className="section-heading">Order Summary</Typography>
+          <Typography variant="h5" className="section-heading">
+            Order Summary
+          </Typography>
           <div className="summary-details">
             {cartItems.map((item) => (
               <div key={item.id} className="summary-item">
@@ -179,6 +199,7 @@ const PaymentPage = () => {
               color="success"
               fullWidth
               onClick={handleProceedToPay}
+              disabled={isFormIncomplete}
             >
               Proceed to Pay
             </Button>
