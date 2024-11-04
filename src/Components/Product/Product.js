@@ -22,7 +22,7 @@ const products = [
     name: "Ladies Special Kit",
     price: 99,
     image: kit2Img,
-     bannerimg: '',
+     bannerimg: allKitImg2,
 
   },
 ];
@@ -116,8 +116,7 @@ const Product = () => {
              src={product.bannerimg}
             alt=""
             className="allProduct_Img "
-            style={{ width: "100%" }}
-          />
+           />
         </div>
         </>
         ))}
