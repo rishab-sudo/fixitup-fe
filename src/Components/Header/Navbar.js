@@ -50,7 +50,7 @@ const Navbar = () => {
     <nav className="sm_navbar_div">
  <div>
     <a  href="#Home">
-      <img className="navbar-brand " src={ require("../../assets/logo.png")} alt=""/>
+      <img className="sm_navbar-brand " src={ require("../../assets/logo.png")} alt=""/>
     </a>
     </div>
 

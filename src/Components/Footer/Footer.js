@@ -150,7 +150,7 @@ const Footer = () => {
         <Container className="footer_sm_container">
           <div className="footer_sm_wrapper1 footer_text">
             <a href="#home">
-              <img className="footer_logo" src="Images/logo.png" alt="" />
+              <img className="footer_logo" src={require ("../../assets/logo.png")} alt="" />
             </a>
           </div>
 

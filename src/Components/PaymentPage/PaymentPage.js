@@ -118,7 +118,7 @@ const PaymentPage = () => {
       <div className="checkout-container">
         {/* User Details Form */}
         <div className="user-details">
-          <Typography variant="h5" className="section-heading">
+          <Typography variant="h5" className="section-heading mb-3">
             User Details
           </Typography>
           <TextField
@@ -151,7 +151,7 @@ const PaymentPage = () => {
             required
           />
 
-          <Typography variant="h5" className="section-heading">
+          <Typography variant="h5" className="section-heading mb-3">
             Address
           </Typography>
           <TextField

@@ -17,7 +17,7 @@ const HomeTop = () => {
       backgroundSize: "100% 100% ",
       padding: "10% 5%",
       position: "relative",
-      marginTop:"85px"
+      marginTop:"80px"
     }}
     >
     <div>

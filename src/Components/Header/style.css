@@ -67,9 +67,9 @@
     top: 0; /* Ensure it's at the top */
     z-index: 1000;
   }
-  .navbar-brand{
-    height: 60px;
-    width: 100%;
+  .sm_navbar-brand{
+    height: 50px;
+    width: 81%;
 }
   .sm_navbar_div{
 display: flex;
