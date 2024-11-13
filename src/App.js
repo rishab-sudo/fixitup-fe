@@ -15,15 +15,24 @@ import PaymentPage from "./Components/PaymentPage/PaymentPage";
 function App() {
   return (
     <>
-   
-    <Provider store={Store}>
+   <p className ="text-center white-50" style={{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    textAlign:"center",
+    fontSize:"20px",
+    fontWeight:"bold",
+    marginTop:"15%"
+
+   }}>Ooohhh, some thing went wrong !</p>
+    {/* <Provider store={Store}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
-    </Provider>
+    </Provider> */}
     </>
   );
 }
