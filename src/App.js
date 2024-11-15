@@ -25,14 +25,14 @@ function App() {
     marginTop:"15%"
 
    }}>Ooohhh, some thing went wrong !</p>
-    {/* <Provider store={Store}>
+    <Provider store={Store}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
-    </Provider> */}
+    </Provider>
     </>
   );
 }
