@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { BsCart4 } from "react-icons/bs";
+import Sparkle from "react-sparkle";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -36,6 +37,7 @@ const Navbar = () => {
   <div className="d-flex justify-content-between">
   <Link to="/Cart">
     <div className="position-relative">
+    {/* <Sparkle color="gold" count={30} fadeOutSpeed={10} flicker={true} /> */}
     <BsCart4 alt="cart" className="Navbar_cart" />
       {c > 0 && <p className="cart-count">{c}</p>}
     </div>

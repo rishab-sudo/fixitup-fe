@@ -7,7 +7,6 @@
     color: black;
     font-weight: 500;
     font-family: 'Potta One';
-    /* text-transform: capitalize; */
   }
 .banner-text {
   position: absolute;
@@ -57,7 +56,7 @@ position: absolute;
       padding-top: 10%;
     }
     .banner_fluid{
-      height: 260px;
+      height: 265px !important;
       max-width: 100vw !important;
     }
     .banner_heading {

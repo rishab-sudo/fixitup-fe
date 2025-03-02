@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Form from "../Form/Form";
+import Form from "../../Components/Form/Form";
 import "./Quote.css";
 
 const Quote = () => {

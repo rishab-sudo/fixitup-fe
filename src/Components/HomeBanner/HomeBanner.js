@@ -2,9 +2,9 @@ import React from 'react'
 import { Container } from "react-bootstrap";
 import homebg from "../../assets/homebg.png";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import "./HomeTop.css"
+import "./HomeBanner.css"
 
-const HomeTop = () => {
+const HomeBanner = () => {
   return (
     <Container fluid className='g-0' id="home">
     <Container
@@ -64,4 +64,4 @@ const HomeTop = () => {
   )
 }
 
-export default HomeTop
+export default HomeBanner

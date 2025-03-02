@@ -124,7 +124,7 @@ const Footer = () => {
         </Container>
         <div>
           <p>
-            © 2024 All Rights Reserved by Fixitup design & develop by{" "}
+            © 2024-25 All Rights Reserved by Fixitup design & develop by{" "}
             <span style={{ color: "#FF688B", fontWeight: "bold" }}>
               <a
                 href="https://www.reclamehub.in/"
@@ -218,7 +218,7 @@ const Footer = () => {
         </Container>
         <div>
           <p>
-            © 2024 All Rights Reserved by Fixitup design & develop by{" "}
+            © 2024-25 All Rights Reserved by Fixitup design & develop by{" "}
             <span style={{ color: "#FF688B", fontWeight: "bold" }}>
               <a
               href="https://wa.me/8527352284"
