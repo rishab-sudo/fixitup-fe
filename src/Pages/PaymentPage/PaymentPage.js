@@ -4,7 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { clearCart } from "../../Redux/CartSlice";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { TextField, Button, Typography, Divider, CircularProgress } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Typography,
+  Divider,
+  CircularProgress,
+} from "@mui/material";
 import "./PaymentPage.css";
 
 const PaymentPage = () => {
@@ -65,18 +71,22 @@ const PaymentPage = () => {
     };
 
     setLoading(true);
+    const param = {
+      buyerEmail,
+      sellerEmail,
+      orderDetails,
+      totalPrice,
+      addressDetails,
+    };
 
     try {
       // https://fixitup-6f381f0c1b86.herokuapp.com/api/orders/send-order-confirmation
       // http://localhost:5000/api/orders/send-order-confirmation
-      await axios.post("https://jv25mfvzt4.execute-api.ap-south-1.amazonaws.com/dev", {
-        buyerEmail,
-        sellerEmail,
-        orderDetails,
-        totalPrice,
-        addressDetails,
-      }); 
-      
+      await axios.post(
+        "http://localhost:5001/api/orders/send-order-confirmation",
+        param
+      );
+
       dispatch(clearCart());
       Swal.fire({
         title: "Order Submitted!",
@@ -104,15 +114,19 @@ const PaymentPage = () => {
 
   if (loading) {
     return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh'
-      }}>
-        <CircularProgress style={{ color: '#b33b72', width: '50px', height: '50px' }} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <CircularProgress
+          style={{ color: "#b33b72", width: "50px", height: "50px" }}
+        />
       </div>
-    )
+    );
   }
 
   return (
@@ -202,11 +216,16 @@ const PaymentPage = () => {
           <div className="summary-details">
             {cartItems.map((item) => (
               <div key={item.id} className="summary-item">
-                <p>{item.name} (x{item.count})</p>
+                <p>
+                  {item.name} (x{item.count})
+                </p>
                 <p>
                   <span style={{ fontWeight: "bold" }}>Price</span>
                   <span style={{ float: "right" }}>
-                    ₹{new Intl.NumberFormat("en-IN").format(item.price * item.count)}
+                    ₹
+                    {new Intl.NumberFormat("en-IN").format(
+                      item.price * item.count
+                    )}
                   </span>
                 </p>
               </div>
@@ -218,7 +237,11 @@ const PaymentPage = () => {
           <p className="total-price">
             <strong>Total Price:</strong>
             <span style={{ float: "right" }}>
-              ₹{new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalPrice)}
+              ₹
+              {new Intl.NumberFormat("en-IN", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              }).format(totalPrice)}
             </span>
           </p>
 
@@ -241,10 +264,10 @@ const PaymentPage = () => {
 
 const textFieldStyle = {
   mb: 2,
-  '& label.Mui-focused': { color: '#51833a' },
-  '& .MuiOutlinedInput-root': {
-    '&:hover fieldset': { borderColor: '#51833a' },
-    '&.Mui-focused fieldset': { borderColor: '#51833a' },
+  "& label.Mui-focused": { color: "#51833a" },
+  "& .MuiOutlinedInput-root": {
+    "&:hover fieldset": { borderColor: "#51833a" },
+    "&.Mui-focused fieldset": { borderColor: "#51833a" },
   },
 };
 
