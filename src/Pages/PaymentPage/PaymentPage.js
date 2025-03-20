@@ -69,7 +69,7 @@ const PaymentPage = () => {
     try {
       // https://fixitup-6f381f0c1b86.herokuapp.com/api/orders/send-order-confirmation
       // http://localhost:5000/api/orders/send-order-confirmation
-      await axios.post("https://asia-south1-fixitup-be-f4faf.cloudfunctions.net/api/orders/send-order-confirmation", {
+      await axios.post("https://fixitup-be-1.onrender.com/api/orders/send-order-confirmation", {
         buyerEmail,
         sellerEmail,
         orderDetails,
