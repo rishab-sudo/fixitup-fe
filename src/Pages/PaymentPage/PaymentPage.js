@@ -69,7 +69,7 @@ const PaymentPage = () => {
     try {
       // https://fixitup-6f381f0c1b86.herokuapp.com/api/orders/send-order-confirmation
       // http://localhost:5000/api/orders/send-order-confirmation
-      await axios.post("https://jv25mfvzt4.execute-api.ap-south-1.amazonaws.com/dev", {
+      await axios.post("https://asia-south1-fixitup-be-f4faf.cloudfunctions.net/api/orders/send-order-confirmation", {
         buyerEmail,
         sellerEmail,
         orderDetails,
@@ -83,7 +83,7 @@ const PaymentPage = () => {
         text: "Your order has been placed successfully.",
         icon: "success",
         confirmButtonText: "OK",
-        timer: 3000,
+        timer: 2000,
         position: "center",
       }).then(() => {
         navigate("/payment-process");
