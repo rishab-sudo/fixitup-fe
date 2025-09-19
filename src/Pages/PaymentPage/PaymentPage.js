@@ -46,7 +46,8 @@ const PaymentPage = () => {
 
   const handleProceedToPay = async () => {
     const buyerEmail = email;
-    const sellerEmail = "contactfixitupinfo@gmail.com";
+    // const sellerEmail = "contactfixitupinfo@gmail.com";
+       const sellerEmail = "fixitupkit@gmail.com";
 
     const orderDetails = cartItems.map((item) => ({
       name: item.name,
