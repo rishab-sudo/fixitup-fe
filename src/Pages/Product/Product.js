@@ -109,8 +109,7 @@ const Product = () => {
             </div>
           </div>
 
-
- <div style={{ backgroundColor: "white",}}>
+<div style={{ backgroundColor: "white",}}>
           <img
             // src="Images/allProducts.png"
              src={product.bannerimg}

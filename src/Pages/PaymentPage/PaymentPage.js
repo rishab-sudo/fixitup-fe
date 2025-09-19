@@ -231,7 +231,7 @@ const PaymentPage = () => {
               onClick={handleProceedToPay}
               disabled={isFormIncomplete}
             >
-              Proceed to Pay
+              Proceed to COD
             </Button>
           </div>
         </div>
