@@ -84,7 +84,7 @@ const PaymentPage = () => {
         text: "Your order has been placed successfully.",
         icon: "success",
         confirmButtonText: "OK",
-        timer: 500,
+        timer: 1000,
         position: "center",
       }).then(() => {
         navigate("/payment-process");
